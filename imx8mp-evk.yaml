@@ -55,10 +55,10 @@ repos:
   meta-freescale-distro:
     url: "https://github.com/Freescale/meta-freescale-distro.git"
     refspec: 50eb2b32e7702bc435049bfe0a98fc65c864c106
-########
+########2a9d9c602188827201945847457941d86ee2c3f9
   meta-imx:
     url: "https://github.com/nxp-imx/meta-imx.git"
-    refspec: 2a9d9c602188827201945847457941d86ee2c3f9
+    refspec: 478d788fc1ecb4783a2702752a61f1035fe9ab9f
     layers:
       meta-bsp:
       meta-ml:

@@ -42,12 +42,12 @@ repos:
     url: "https://github.com/kraj/meta-clang.git"
     refspec: f5355ca9b86fb5de5930132ffd95a9b352d694f9
 
-  meta-browser:
-    url: "https://github.com/OSSystems/meta-browser.git"
-    refspec: 830ef438e81ba5fc915b1855e69f02b2c286b21a
-    layers:
-        meta-chromium:
-        meta-firefox:
+#  meta-browser:
+#    url: "https://github.com/OSSystems/meta-browser.git"
+#    refspec: 830ef438e81ba5fc915b1855e69f02b2c286b21a
+#    layers:
+#        meta-chromium:
+#        meta-firefox:
 
   meta-freescale:
     url: "https://github.com/Freescale/meta-freescale.git"

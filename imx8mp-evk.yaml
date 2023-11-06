@@ -67,7 +67,7 @@ repos:
 ########
   meta-imx:
     url: "https://github.com/nxp-imx/meta-imx.git"
-    refspec: 478d788fc1ecb4783a2702752a61f1035fe9ab9f
+    refspec: 60050088e631b96b4fb39a54a5d384ce7c5e38ed
     layers:
       meta-bsp:
       meta-ml:

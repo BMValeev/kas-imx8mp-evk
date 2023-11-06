@@ -53,9 +53,9 @@ repos:
     url: "https://github.com/Freescale/meta-freescale.git"
     refspec: 1acf098972f9f86b26eee815827667dbd2fcdeaf
     patches:
-      01-to-remove-imx8mp-evk-conf:
-        path: patches/0001-remove-imx8mn-imx8mp-evk-conf.patch
-        repo: adu
+#      01-to-remove-imx8mp-evk-conf:
+#        path: patches/0001-remove-imx8mn-imx8mp-evk-conf.patch
+#        repo: adu
 
   meta-freescale-3rdparty:
     url: "https://github.com/Freescale/meta-freescale-3rdparty.git"

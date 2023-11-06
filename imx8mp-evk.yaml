@@ -92,7 +92,7 @@ repos:
 
   meta-nxp-demo-experience:
     url: https://github.com/nxp-imx-support/meta-nxp-demo-experience.git
-    refspec: 150162c84d367605c056ce54bf9221a8c652a36e
+    refspec: 2a9d9c602188827201945847457941d86ee2c3f9
 #    patches:
 #      01_add_compatible:
 #        repo: adu

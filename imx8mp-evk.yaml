@@ -67,7 +67,7 @@ repos:
 ########
   meta-imx:
     url: "https://github.com/nxp-imx/meta-imx.git"
-    refspec: 60050088e631b96b4fb39a54a5d384ce7c5e38ed
+    refspec: 62d40dbc7c4f8887fddbce3d89ff0b2b58ad73d5
     layers:
       meta-bsp:
       meta-ml:
@@ -92,7 +92,7 @@ repos:
 
   meta-nxp-demo-experience:
     url: https://github.com/nxp-imx-support/meta-nxp-demo-experience.git
-    refspec: 2a9d9c602188827201945847457941d86ee2c3f9
+    refspec: 150162c84d367605c056ce54bf9221a8c652a36e
 #    patches:
 #      01_add_compatible:
 #        repo: adu

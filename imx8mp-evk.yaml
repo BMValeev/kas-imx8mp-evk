@@ -13,14 +13,14 @@ repos:
 
   poky:
     url: "https://git.yoctoproject.org/git/poky"
-    refspec: f48d73995c6c86febcb24eb91dd1569a648cb4ae
+    refspec: 08665a81dcd41069eed1468f1587abe6b5893471
     layers:
         meta:
         meta-poky:
 #
   meta-openembedded:
     url: "https://github.com/openembedded/meta-openembedded.git"
-    refspec: c75ffccd840449ba7de745d6f8eae811adb29ff4
+    refspec: 945f062ff098dc9c8ba8d22c5eef88adec60730d
     layers:
         meta-oe:
         meta-multimedia:
@@ -37,12 +37,12 @@ repos:
 
   meta-clang:
     url: "https://github.com/kraj/meta-clang.git"
-    refspec: f5355ca9b86fb5de5930132ffd95a9b352d694f9
+    refspec: 04a1194c78563524659f27941304e564956792b1
 
 
   meta-freescale:
     url: "https://github.com/Freescale/meta-freescale.git"
-    refspec: e56f52e4afdd043c003475fd671cf3f2f497f2e8
+    refspec: 1acf098972f9f86b26eee815827667dbd2fcdeaf
 #    patches:
 #      01-to-remove-imx8mp-evk-conf:
 #        path: patches/0001-remove-imx8mn-imx8mp-evk-conf.patch
@@ -50,11 +50,11 @@ repos:
 
   meta-freescale-3rdparty:
     url: "https://github.com/Freescale/meta-freescale-3rdparty.git"
-    refspec: 81d336c6c4a78916b06eb4d2190e39bc23f22336
+    refspec: 896b28cad2efe77368b007151f726d3faaf8512b
 
   meta-freescale-distro:
     url: "https://github.com/Freescale/meta-freescale-distro.git"
-    refspec: ca27d12e4964d1336e662bcc60184bbff526c857
+    refspec: 50eb2b32e7702bc435049bfe0a98fc65c864c106
 ########
   meta-imx:
     url: "https://github.com/nxp-imx/meta-imx.git"
@@ -66,11 +66,11 @@ repos:
 
   meta-python2:
     url: "https://git.openembedded.org/meta-python2"
-    refspec: 4400f9155ec193d028208cf0c66aeed2ba2b00ab
+    refspec: 56288c2599d7a6df6e34e8b07b7dc3d4d2d71e30
 
   meta-rust:
     url: "https://github.com/meta-rust/meta-rust.git"
-    refspec: 59c951cc171aee5db29bbd74e104705a10fae588
+    refspec: 0fffd992ee560bbfd682d3ef94b7636670e6fd56
 
 #  meta-rust-bin:
 #    url: "https://github.com/rust-embedded/meta-rust-bin.git"

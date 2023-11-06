@@ -20,7 +20,7 @@ repos:
 #
   meta-openembedded:
     url: "https://github.com/openembedded/meta-openembedded.git"
-    refspec: 945f062ff098dc9c8ba8d22c5eef88adec60730d
+    refspec: c75ffccd840449ba7de745d6f8eae811adb29ff4
     layers:
         meta-oe:
         meta-multimedia:

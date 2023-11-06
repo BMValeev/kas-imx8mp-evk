@@ -34,9 +34,9 @@ repos:
     #    path: patches/0001-fixed-build-error-for-websocketpp.patch
     #    repo: adu
 
-  meta-swupdate:
-    url: "https://github.com/sbabic/meta-swupdate.git"
-    refspec: c06067a0e10fe59d0fecbca629495ecbcdd1d5a2
+#  meta-swupdate:
+#   url: "https://github.com/sbabic/meta-swupdate.git"
+#   refspec: c06067a0e10fe59d0fecbca629495ecbcdd1d5a2
 
   meta-clang:
     url: "https://github.com/kraj/meta-clang.git"
@@ -51,23 +51,23 @@ repos:
 
   meta-freescale:
     url: "https://github.com/Freescale/meta-freescale.git"
-    refspec: e56f52e4afdd043c003475fd671cf3f2f497f2e8
-#    patches:
-#      01-to-remove-imx8mp-evk-conf:
-#        path: patches/0001-remove-imx8mn-imx8mp-evk-conf.patch
-#        repo: adu
+    refspec: 1acf098972f9f86b26eee815827667dbd2fcdeaf
+    patches:
+      01-to-remove-imx8mp-evk-conf:
+        path: patches/0001-remove-imx8mn-imx8mp-evk-conf.patch
+        repo: adu
 
   meta-freescale-3rdparty:
     url: "https://github.com/Freescale/meta-freescale-3rdparty.git"
-    refspec: 81d336c6c4a78916b06eb4d2190e39bc23f22336
+    refspec: 896b28cad2efe77368b007151f726d3faaf8512b
 
   meta-freescale-distro:
     url: "https://github.com/Freescale/meta-freescale-distro.git"
-    refspec: ca27d12e4964d1336e662bcc60184bbff526c857
+    refspec: 50eb2b32e7702bc435049bfe0a98fc65c864c106
 
   meta-imx:
     url: "https://github.com/nxp-imx/meta-imx.git"
-    refspec: c319448071f7299a77b70d6f5ccebae075f49df2
+    refspec: 478d788fc1ecb4783a2702752a61f1035fe9ab9f
     layers:
       meta-bsp:
       meta-ml:
@@ -92,11 +92,11 @@ repos:
 
   meta-nxp-demo-experience:
     url: https://github.com/nxp-imx-support/meta-nxp-demo-experience.git
-    refspec: 03904c493469907a2829cf29df7ab060f9c664a6
-#    patches:
-#      01_add_compatible:
-#        repo: adu
-#        path: patches/0001-add-layer-compatible-for-dunfell-gatesgarth.patch
+    refspec: c7263d9f3cc7bbf44e7164ffeda494cf283d3dec
+    patches:
+      01_add_compatible:
+        repo: adu
+        path: patches/0001-add-layer-compatible-for-dunfell-gatesgarth.patch
 
 bblayers_conf_header:
   standard: |

@@ -17,10 +17,10 @@ repos:
     layers:
         meta:
         meta-poky:
-
+#
   meta-openembedded:
     url: "https://github.com/openembedded/meta-openembedded.git"
-    refspec: 945f062ff098dc9c8ba8d22c5eef88adec60730d
+    refspec: 2b5dd1eb81cd08bc065bc76125f2856e9383e98b
     layers:
         meta-oe:
         meta-multimedia:
@@ -51,7 +51,7 @@ repos:
 
   meta-freescale:
     url: "https://github.com/Freescale/meta-freescale.git"
-    refspec: 1acf098972f9f86b26eee815827667dbd2fcdeaf
+    refspec: e56f52e4afdd043c003475fd671cf3f2f497f2e8
 #    patches:
 #      01-to-remove-imx8mp-evk-conf:
 #        path: patches/0001-remove-imx8mn-imx8mp-evk-conf.patch
@@ -59,12 +59,12 @@ repos:
 
   meta-freescale-3rdparty:
     url: "https://github.com/Freescale/meta-freescale-3rdparty.git"
-    refspec: 896b28cad2efe77368b007151f726d3faaf8512b
+    refspec: 81d336c6c4a78916b06eb4d2190e39bc23f22336
 
   meta-freescale-distro:
     url: "https://github.com/Freescale/meta-freescale-distro.git"
-    refspec: 50eb2b32e7702bc435049bfe0a98fc65c864c106
-
+    refspec: ca27d12e4964d1336e662bcc60184bbff526c857
+########
   meta-imx:
     url: "https://github.com/nxp-imx/meta-imx.git"
     refspec: 478d788fc1ecb4783a2702752a61f1035fe9ab9f
@@ -92,7 +92,7 @@ repos:
 
   meta-nxp-demo-experience:
     url: https://github.com/nxp-imx-support/meta-nxp-demo-experience.git
-    refspec: c7263d9f3cc7bbf44e7164ffeda494cf283d3dec
+    refspec: 150162c84d367605c056ce54bf9221a8c652a36e
     patches:
       01_add_compatible:
         repo: adu

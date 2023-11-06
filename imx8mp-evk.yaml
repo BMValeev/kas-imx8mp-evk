@@ -13,14 +13,14 @@ repos:
 
   poky:
     url: "https://git.yoctoproject.org/git/poky"
-    refspec: 08665a81dcd41069eed1468f1587abe6b5893471
+    refspec: f48d73995c6c86febcb24eb91dd1569a648cb4ae
     layers:
         meta:
         meta-poky:
 
   meta-openembedded:
     url: "https://github.com/openembedded/meta-openembedded.git"
-    refspec: 945f062ff098dc9c8ba8d22c5eef88adec60730d
+    refspec: 2b5dd1eb81cd08bc065bc76125f2856e9383e98b
     layers:
         meta-oe:
         meta-multimedia:
@@ -36,22 +36,22 @@ repos:
 
   meta-swupdate:
     url: "https://github.com/sbabic/meta-swupdate.git"
-    refspec: 7847476aaad72f635e59062cadbd5d2d5f2a07cb
+    refspec: c06067a0e10fe59d0fecbca629495ecbcdd1d5a2
 
   meta-clang:
     url: "https://github.com/kraj/meta-clang.git"
-    refspec: 04a1194c78563524659f27941304e564956792b1
+    refspec: f5355ca9b86fb5de5930132ffd95a9b352d694f9
 
   meta-browser:
     url: "https://github.com/OSSystems/meta-browser.git"
-    refspec: 15228b01903d4ca801916e55c7618fa5a71019b7
+    refspec: 830ef438e81ba5fc915b1855e69f02b2c286b21a
     layers:
         meta-chromium:
         meta-firefox:
 
   meta-freescale:
     url: "https://github.com/Freescale/meta-freescale.git"
-    refspec: 1acf098972f9f86b26eee815827667dbd2fcdeaf
+    refspec: e56f52e4afdd043c003475fd671cf3f2f497f2e8
     patches:
       01-to-remove-imx8mp-evk-conf:
         path: patches/0001-remove-imx8mn-imx8mp-evk-conf.patch
@@ -59,15 +59,15 @@ repos:
 
   meta-freescale-3rdparty:
     url: "https://github.com/Freescale/meta-freescale-3rdparty.git"
-    refspec: 896b28cad2efe77368b007151f726d3faaf8512b
+    refspec: 81d336c6c4a78916b06eb4d2190e39bc23f22336
 
   meta-freescale-distro:
     url: "https://github.com/Freescale/meta-freescale-distro.git"
-    refspec: 50eb2b32e7702bc435049bfe0a98fc65c864c106
+    refspec: ca27d12e4964d1336e662bcc60184bbff526c857
 
   meta-imx:
     url: "https://github.com/nxp-imx/meta-imx.git"
-    refspec: 478d788fc1ecb4783a2702752a61f1035fe9ab9f
+    refspec: c319448071f7299a77b70d6f5ccebae075f49df2
     layers:
       meta-bsp:
       meta-ml:
@@ -75,20 +75,20 @@ repos:
 
   meta-python2:
     url: "https://git.openembedded.org/meta-python2"
-    refspec: 56288c2599d7a6df6e34e8b07b7dc3d4d2d71e30
+    refspec: 4400f9155ec193d028208cf0c66aeed2ba2b00ab
 
   meta-rust:
     url: "https://github.com/meta-rust/meta-rust.git"
-    refspec: 0fffd992ee560bbfd682d3ef94b7636670e6fd56
+    refspec: 59c951cc171aee5db29bbd74e104705a10fae588
 
 #  meta-rust-bin:
 #    url: "https://github.com/rust-embedded/meta-rust-bin.git"
 #    refspec: f8e79ed922c765fca224b2318ab172e0b59f4a4d
 
-  # QT5.15.x for gatesgarth
-  meta-qt5:
-    url: "https://code.qt.io/yocto/meta-qt5.git"
-    refspec: 2b33a5d5e888370bb56685b86aa82b73624f19f0
+#  # QT5.15.x for gatesgarth
+#  meta-qt5:
+#    url: "https://code.qt.io/yocto/meta-qt5.git"
+#    refspec: 2b33a5d5e888370bb56685b86aa82b73624f19f0
 
   meta-nxp-demo-experience:
     url: https://github.com/nxp-imx-support/meta-nxp-demo-experience.git

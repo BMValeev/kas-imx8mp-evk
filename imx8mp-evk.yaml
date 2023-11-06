@@ -34,20 +34,11 @@ repos:
     #    path: patches/0001-fixed-build-error-for-websocketpp.patch
     #    repo: adu
 
-#  meta-swupdate:
-#   url: "https://github.com/sbabic/meta-swupdate.git"
-#   refspec: c06067a0e10fe59d0fecbca629495ecbcdd1d5a2
 
   meta-clang:
     url: "https://github.com/kraj/meta-clang.git"
     refspec: f5355ca9b86fb5de5930132ffd95a9b352d694f9
 
-#  meta-browser:
-#    url: "https://github.com/OSSystems/meta-browser.git"
-#    refspec: 830ef438e81ba5fc915b1855e69f02b2c286b21a
-#    layers:
-#        meta-chromium:
-#        meta-firefox:
 
   meta-freescale:
     url: "https://github.com/Freescale/meta-freescale.git"
@@ -97,6 +88,17 @@ repos:
 #      01_add_compatible:
 #        repo: adu
 #        path: patches/0001-add-layer-compatible-for-dunfell-gatesgarth.patch
+
+#  meta-swupdate:
+#   url: "https://github.com/sbabic/meta-swupdate.git"
+#   refspec: c06067a0e10fe59d0fecbca629495ecbcdd1d5a2
+
+#  meta-browser:
+#    url: "https://github.com/OSSystems/meta-browser.git"
+#    refspec: 830ef438e81ba5fc915b1855e69f02b2c286b21a
+#    layers:
+#        meta-chromium:
+#        meta-firefox:
 
 bblayers_conf_header:
   standard: |

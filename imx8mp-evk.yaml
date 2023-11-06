@@ -93,10 +93,10 @@ repos:
   meta-nxp-demo-experience:
     url: https://github.com/nxp-imx-support/meta-nxp-demo-experience.git
     refspec: 150162c84d367605c056ce54bf9221a8c652a36e
-    patches:
-      01_add_compatible:
-        repo: adu
-        path: patches/0001-add-layer-compatible-for-dunfell-gatesgarth.patch
+#    patches:
+#      01_add_compatible:
+#        repo: adu
+#        path: patches/0001-add-layer-compatible-for-dunfell-gatesgarth.patch
 
 bblayers_conf_header:
   standard: |

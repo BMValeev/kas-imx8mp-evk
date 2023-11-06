@@ -81,9 +81,9 @@ repos:
 #    url: "https://code.qt.io/yocto/meta-qt5.git"
 #    refspec: 2b33a5d5e888370bb56685b86aa82b73624f19f0
 
-  meta-nxp-demo-experience:
-    url: https://github.com/nxp-imx-support/meta-nxp-demo-experience.git
-    refspec: 03904c493469907a2829cf29df7ab060f9c664a6
+#  meta-nxp-demo-experience:
+#    url: https://github.com/nxp-imx-support/meta-nxp-demo-experience.git
+#    refspec: 03904c493469907a2829cf29df7ab060f9c664a6
 #    patches:
 #      01_add_compatible:
 #        repo: adu

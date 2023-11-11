@@ -13,14 +13,14 @@ repos:
 
   poky:
     url: "https://git.yoctoproject.org/git/poky"
-    refspec: d88d62c20d7d8da85f02edb170dae0280624ad7e
+    refspec: 943ef2fad8428f002850e3655a3312e13d0dcb2c
     layers:
         meta:
         meta-poky:
 #
   meta-openembedded:
     url: "https://github.com/openembedded/meta-openembedded.git"
-    refspec: 2b5dd1eb81cd08bc065bc76125f2856e9383e98b
+    refspec: ac4ccd2fbbb599d75ca4051911fcbaca39dbe6d7
     layers:
         meta-oe:
         meta-multimedia:
@@ -37,12 +37,12 @@ repos:
 
   meta-clang:
     url: "https://github.com/kraj/meta-clang.git"
-    refspec: 711e593d5984aad3bf35c51b7ac4482982bc16c7
+    refspec: 61faae011fb95712064f2c58abe6293f0daeeab5
 
 
   meta-freescale:
     url: "https://github.com/Freescale/meta-freescale.git"
-    refspec: 14f1a630a47375432f93c556927b879b51d84c4e
+    refspec: 41d4f625c6db7a778f0f9a735c2cb48e023bc49b
 #    patches:
 #      01-to-remove-imx8mp-evk-conf:
 #        path: patches/0001-remove-imx8mn-imx8mp-evk-conf.patch
@@ -50,15 +50,15 @@ repos:
 
   meta-freescale-3rdparty:
     url: "https://github.com/Freescale/meta-freescale-3rdparty.git"
-    refspec: dbcc686f52c3c84db8cb86aa8973a4e373651b98
+    refspec: b85d08a55cb833bfc4e8b5034ff804286c67620e
 
   meta-freescale-distro:
     url: "https://github.com/Freescale/meta-freescale-distro.git"
-    refspec: ca27d12e4964d1336e662bcc60184bbff526c857
+    refspec: 11be3f01962df8436c5c7b0d61cd3dbd1b872905
 ########2a9d9c602188827201945847457941d86ee2c3f9
   meta-imx:
     url: "https://github.com/nxp-imx/meta-imx.git"
-    refspec: 06c73ccb76aaa727d57b2693fe7b904325f58cc3
+    refspec: 83d7642fe53f1cd3871cf2b2692b61459237cd64
     layers:
       meta-bsp:
       meta-ml:
@@ -66,7 +66,7 @@ repos:
 
   meta-python2:
     url: "https://git.openembedded.org/meta-python2"
-    refspec: 4400f9155ec193d028208cf0c66aeed2ba2b00ab
+    refspec: c43c29e57f16af4e77441b201855321fbd546661
 
   meta-rust:
     url: "https://github.com/meta-rust/meta-rust.git"
@@ -76,14 +76,14 @@ repos:
 #    url: "https://github.com/rust-embedded/meta-rust-bin.git"
 #    refspec: f8e79ed922c765fca224b2318ab172e0b59f4a4d
 
-#  # QT5.15.x for gatesgarth
-#  meta-qt5:
-#    url: "https://code.qt.io/yocto/meta-qt5.git"
-#    refspec: 2b33a5d5e888370bb56685b86aa82b73624f19f0
+  # QT5.15.x for gatesgarth
+  meta-qt5:
+    url: "https://code.qt.io/yocto/meta-qt5.git"
+    refspec: 8d5672cc6ca327576a814d35dfb5d59ab24043cb
 
 #  meta-nxp-demo-experience:
 #    url: https://github.com/nxp-imx-support/meta-nxp-demo-experience.git
-#    refspec: 03904c493469907a2829cf29df7ab060f9c664a6
+#    refspec: 60578a5dbbfc9abc360a12e2cef7b64bfa582904
 #    patches:
 #      01_add_compatible:
 #        repo: adu

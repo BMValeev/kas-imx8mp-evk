@@ -237,3 +237,5 @@ local_conf_header:
     # for adu/swupdate
     # SOC_DEFAULT_WKS_FILE_mx8 = "adu-imx8mp.wks"
     PREFERRED_PROVIDER_virtual/kernel = "linux-imx"
+    BB_NUMBER_THREADS = "16"
+    PARALLEL_MAKE="-j 6"

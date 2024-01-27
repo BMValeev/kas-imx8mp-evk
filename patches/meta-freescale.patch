@@ -1,0 +1,285 @@
+diff --git a/recipes-bsp/imx-atf/imx-atf_2.4.bb b/recipes-bsp/imx-atf/imx-atf_2.4.bb
+index f4db002b..06e32b45 100644
+--- a/recipes-bsp/imx-atf/imx-atf_2.4.bb
++++ b/recipes-bsp/imx-atf/imx-atf_2.4.bb
+@@ -8,7 +8,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/BSD-3-Clause;m
+ PV .= "+git${SRCPV}"
+ 
+ SRCBRANCH = "lf_v2.4"
+-SRC_URI = "git://source.codeaurora.org/external/imx/imx-atf.git;protocol=https;branch=${SRCBRANCH} \
++SRC_URI = "git://github.com/nxp-imx/imx-atf.git;protocol=https;branch=${SRCBRANCH} \
+ "
+ SRCREV = "ec35fef92b71a79075f214f8cff0738cd4482ed0"
+ 
+diff --git a/recipes-bsp/imx-lib/imx-lib_git.bb b/recipes-bsp/imx-lib/imx-lib_git.bb
+index c5619070..2612368f 100644
+--- a/recipes-bsp/imx-lib/imx-lib_git.bb
++++ b/recipes-bsp/imx-lib/imx-lib_git.bb
+@@ -13,7 +13,7 @@ PE = "1"
+ PV = "5.8+${SRCPV}"
+ 
+ SRCBRANCH = "master"
+-SRC_URI = "git://source.codeaurora.org/external/imx/imx-lib.git;protocol=https;branch=${SRCBRANCH}"
++SRC_URI = "git://github.com/nxp-imx/imx-lib.git;protocol=https;branch=${SRCBRANCH}"
+ SRCREV = "3f777974c0c146817e2ff5cb0340ca66a1f99e57"
+ 
+ S = "${WORKDIR}/git"
+diff --git a/recipes-bsp/imx-test/imx-test_git.bb b/recipes-bsp/imx-test/imx-test_git.bb
+index 90594f39..c0c1b65a 100644
+--- a/recipes-bsp/imx-test/imx-test_git.bb
++++ b/recipes-bsp/imx-test/imx-test_git.bb
+@@ -18,7 +18,7 @@ PV = "7.0+${SRCPV}"
+ 
+ SRCBRANCH = "lf-5.10.y_2.0.0"
+ SRC_URI = " \
+-    git://source.codeaurora.org/external/imx/imx-test.git;protocol=https;branch=${SRCBRANCH} \
++    git://github.com/nxp-imx/imx-test.git;protocol=https;branch=${SRCBRANCH} \
+     file://memtool_profile \
+ "
+ SRCREV = "e55c83b939dbb1989181f48b2b3f3e32f7b5b380"
+diff --git a/recipes-extended/jailhouse/jailhouse_0.12.bb b/recipes-extended/jailhouse/jailhouse_0.12.bb
+index a15bec6c..968afeff 100644
+--- a/recipes-extended/jailhouse/jailhouse_0.12.bb
++++ b/recipes-extended/jailhouse/jailhouse_0.12.bb
+@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=9fa7f895f96bde2d47fd5b7d95b6ba4d \
+ SRCBRANCH = "imx_5.4.47_2.2.0"
+ SRCREV = "8bbe203ee7c1fc16198ce1bf964e54c90606c3c2"
+ 
+-SRC_URI = "git://source.codeaurora.org/external/imx/imx-jailhouse.git;protocol=ssh;branch=${SRCBRANCH} \
++SRC_URI = "git://github.com/nxp-imx/imx-jailhouse.git;protocol=ssh;branch=${SRCBRANCH} \
+            file://0001-tools-scripts-update-shebang-to-python3.patch \
+ "
+ 
+diff --git a/recipes-graphics/drm/libdrm_2.4.102.imx.bb b/recipes-graphics/drm/libdrm_2.4.102.imx.bb
+index 6935b782..ab3b8b60 100644
+--- a/recipes-graphics/drm/libdrm_2.4.102.imx.bb
++++ b/recipes-graphics/drm/libdrm_2.4.102.imx.bb
+@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = "file://xf86drm.c;beginline=9;endline=32;md5=c8a3b961af7667c5
+ PROVIDES = "drm"
+ DEPENDS = "libpthread-stubs"
+ 
+-IMX_LIBDRM_SRC ?= "git://source.codeaurora.org/external/imx/libdrm-imx.git;protocol=https;nobranch=1"
++IMX_LIBDRM_SRC ?= "git://github.com/nxp-imx/libdrm-imx.git;protocol=https;nobranch=1"
+ IMX_LIBDRM_BRANCH ?= "libdrm-imx-2.4.102"
+ SRC_URI = "${IMX_LIBDRM_SRC};branch=${IMX_LIBDRM_BRANCH} \
+            file://0001-meson-add-libdrm-vivante-to-the-meson-meta-data.patch "
+diff --git a/recipes-graphics/imx-gpu-apitrace/imx-gpu-apitrace_9.0.0.bb b/recipes-graphics/imx-gpu-apitrace/imx-gpu-apitrace_9.0.0.bb
+index 65ce9cd5..4148349f 100644
+--- a/recipes-graphics/imx-gpu-apitrace/imx-gpu-apitrace_9.0.0.bb
++++ b/recipes-graphics/imx-gpu-apitrace/imx-gpu-apitrace_9.0.0.bb
+@@ -4,7 +4,7 @@ LICENSE = "MIT"
+ LIC_FILES_CHKSUM = "file://LICENSE;md5=aeb969185a143c3c25130bc2c3ef9a50"
+ DEPENDS = "imx-gpu-viv zlib libpng procps"
+ 
+-SRC_URI = "git://source.codeaurora.org/external/imx/apitrace-imx.git;protocol=https;branch=imx_9.0"
++SRC_URI = "git://github.com/nxp-imx/apitrace-imx.git;protocol=https;branch=imx_9.0"
+ SRCREV = "c50e6a954e44998f2e3793a8de863e961f8008c6"
+ 
+ S = "${WORKDIR}/git"
+diff --git a/recipes-graphics/wayland/wayland-protocols_1.20.imx.bb b/recipes-graphics/wayland/wayland-protocols_1.20.imx.bb
+index 852b3160..c8af7301 100644
+--- a/recipes-graphics/wayland/wayland-protocols_1.20.imx.bb
++++ b/recipes-graphics/wayland/wayland-protocols_1.20.imx.bb
+@@ -9,7 +9,7 @@ LICENSE = "MIT"
+ LIC_FILES_CHKSUM = "file://COPYING;md5=c7b12b6702da38ca028ace54aae3d484 \
+                     file://stable/presentation-time/presentation-time.xml;endline=26;md5=4646cd7d9edc9fa55db941f2d3a7dc53"
+ 
+-SRC_URI = "git://source.codeaurora.org/external/imx/wayland-protocols-imx.git;protocol=https;branch=wayland-protocols-imx-1.20"
++SRC_URI = "git://github.com/nxp-imx/wayland-protocols-imx.git;protocol=https;branch=wayland-protocols-imx-1.20"
+ SRCREV = "9cacf108d0ee5863c7a656da5d2271bc2396e43d"
+ S = "${WORKDIR}/git"
+ 
+diff --git a/recipes-graphics/wayland/weston_9.0.0.imx.bb b/recipes-graphics/wayland/weston_9.0.0.imx.bb
+index a69f1e6a..deab3632 100644
+--- a/recipes-graphics/wayland/weston_9.0.0.imx.bb
++++ b/recipes-graphics/wayland/weston_9.0.0.imx.bb
+@@ -149,7 +149,7 @@ SUMMARY = "Weston, a Wayland compositor, i.MX fork"
+ DEFAULT_PREFERENCE = "-1"
+ 
+ SRCBRANCH = "weston-imx-9.0"
+-SRC_URI = "git://source.codeaurora.org/external/imx/weston-imx.git;protocol=https;branch=${SRCBRANCH} \
++SRC_URI = "git://github.com/nxp-imx/weston-imx.git;protocol=https;branch=${SRCBRANCH} \
+            file://weston.png \
+            file://weston.desktop \
+            file://xwayland.weston-start \
+diff --git a/recipes-graphics/xorg-driver/xf86-video-imx-vivante_6.4.0.p0.0.bb b/recipes-graphics/xorg-driver/xf86-video-imx-vivante_6.4.0.p0.0.bb
+index 069008c0..b71e81a3 100644
+--- a/recipes-graphics/xorg-driver/xf86-video-imx-vivante_6.4.0.p0.0.bb
++++ b/recipes-graphics/xorg-driver/xf86-video-imx-vivante_6.4.0.p0.0.bb
+@@ -15,7 +15,7 @@ LIC_FILES_CHKSUM = "file://COPYING-MIT;md5=b5e9d9f5c02ea831ab3ecf802bb7c4f3"
+ 
+ SRCREV = "c828e8a7c38743e960967e7bb78c134cec31c102"
+ SRCBRANCH = "imx_exa_viv6_g2d"
+-SRC_URI = "git://source.codeaurora.org/external/imx/xf86-video-imx-vivante.git;protocol=https;branch=${SRCBRANCH} \
++SRC_URI = "git://github.com/nxp-imx/xf86-video-imx-vivante.git;protocol=https;branch=${SRCBRANCH} \
+            file://rc.autohdmi"
+ 
+ S = "${WORKDIR}/git"
+diff --git a/recipes-kernel/kernel-modules/kernel-module-imx-gpu-viv_6.4.3.p2.0.bb b/recipes-kernel/kernel-modules/kernel-module-imx-gpu-viv_6.4.3.p2.0.bb
+index a8b890fe..bb0bd26e 100644
+--- a/recipes-kernel/kernel-modules/kernel-module-imx-gpu-viv_6.4.3.p2.0.bb
++++ b/recipes-kernel/kernel-modules/kernel-module-imx-gpu-viv_6.4.3.p2.0.bb
+@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171d
+ 
+ SRCBRANCH = "lf-5.10.y"
+ LOCALVERSION = "-5.10.52-2.1.0"
+-KERNEL_SRC ?= "git://source.codeaurora.org/external/imx/linux-imx.git;protocol=https"
++KERNEL_SRC ?= "git://github.com/nxp-imx/linux-imx.git;protocol=https"
+ SRC_URI = " \
+     ${KERNEL_SRC};branch=${SRCBRANCH};subpath=drivers/mxc/gpu-viv;destsuffix=git/src \
+     file://Add-makefile.patch \
+diff --git a/recipes-kernel/kernel-modules/kernel-module-isp-vvcam_4.2.2.13.0.bb b/recipes-kernel/kernel-modules/kernel-module-isp-vvcam_4.2.2.13.0.bb
+index 7eee17d1..531e723b 100644
+--- a/recipes-kernel/kernel-modules/kernel-module-isp-vvcam_4.2.2.13.0.bb
++++ b/recipes-kernel/kernel-modules/kernel-module-isp-vvcam_4.2.2.13.0.bb
+@@ -5,7 +5,7 @@ LICENSE = "GPLv2"
+ LIC_FILES_CHKSUM = "file://${WORKDIR}/git/vvcam/LICENSE;md5=64381a6ea83b48c39fe524c85f65fb44"
+ 
+ SRCBRANCH = "imx_5.10_2.0.0"
+-ISP_KERNEL_SRC ?= "git://source.codeaurora.org/external/imx/isp-vvcam.git;protocol=https"
++ISP_KERNEL_SRC ?= "git://github.com/nxp-imx/isp-vvcam.git;protocol=https"
+ 
+ SRC_URI = " \
+     ${ISP_KERNEL_SRC};branch=${SRCBRANCH} \
+diff --git a/recipes-kernel/linux/linux-imx-headers_5.10.bb b/recipes-kernel/linux/linux-imx-headers_5.10.bb
+index 0e15f343..a5242d27 100644
+--- a/recipes-kernel/linux/linux-imx-headers_5.10.bb
++++ b/recipes-kernel/linux/linux-imx-headers_5.10.bb
+@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
+ 
+ SRCBRANCH = "lf-5.10.y"
+ LOCALVERSION = "-5.10.52-2.1.0"
+-SRC_URI = "git://source.codeaurora.org/external/imx/linux-imx.git;protocol=https;branch=${SRCBRANCH}"
++SRC_URI = "git://github.com/nxp-imx/linux-imx.git;protocol=https;branch=${SRCBRANCH}"
+ SRCREV = "ef3f2cfc6010c13feb40cfb7fd7490832cf86f45"
+ 
+ S = "${WORKDIR}/git"
+diff --git a/recipes-multimedia/alsa/imx-alsa-plugins_1.0.26.bb b/recipes-multimedia/alsa/imx-alsa-plugins_1.0.26.bb
+index db2f71fd..237b4925 100644
+--- a/recipes-multimedia/alsa/imx-alsa-plugins_1.0.26.bb
++++ b/recipes-multimedia/alsa/imx-alsa-plugins_1.0.26.bb
+@@ -18,7 +18,7 @@ LIC_FILES_CHKSUM = "file://COPYING.GPL;md5=94d55d512a9ba36caa9b7df079bae19f"
+ inherit autotools pkgconfig use-imx-headers
+ 
+ SRCBRANCH = "MM_04.05.01_1909_L4.19.35"
+-SRC_URI = "git://source.codeaurora.org/external/imx/imx-alsa-plugins.git;protocol=https;branch=${SRCBRANCH}"
++SRC_URI = "git://github.com/nxp-imx/imx-alsa-plugins.git;protocol=https;branch=${SRCBRANCH}"
+ SRCREV = "cde60d68ab2acee913dbfacb8aabb53d87dd3e38"
+ 
+ S = "${WORKDIR}/git"
+diff --git a/recipes-multimedia/gstreamer/gstreamer1.0-plugins-bad_1.18.0.imx.bb b/recipes-multimedia/gstreamer/gstreamer1.0-plugins-bad_1.18.0.imx.bb
+index 5d93176b..3f90395b 100644
+--- a/recipes-multimedia/gstreamer/gstreamer1.0-plugins-bad_1.18.0.imx.bb
++++ b/recipes-multimedia/gstreamer/gstreamer1.0-plugins-bad_1.18.0.imx.bb
+@@ -10,7 +10,7 @@ DEFAULT_PREFERENCE = "-1"
+ PACKAGE_ARCH_imxpxp = "${MACHINE_SOCARCH}"
+ PACKAGE_ARCH_mx8 = "${MACHINE_SOCARCH}"
+ 
+-GST1.0-PLUGINS-BAD_SRC ?= "gitsm://source.codeaurora.org/external/imx/gst-plugins-bad.git;protocol=https"
++GST1.0-PLUGINS-BAD_SRC ?= "gitsm://github.com/nxp-imx/gst-plugins-bad.git;protocol=https"
+ SRCBRANCH = "MM_04.06.01_2105_L5.10.y"
+ 
+ SRC_URI = " \
+diff --git a/recipes-multimedia/gstreamer/gstreamer1.0-plugins-base_1.18.0.imx.bb b/recipes-multimedia/gstreamer/gstreamer1.0-plugins-base_1.18.0.imx.bb
+index 5e69e42b..e0a886e3 100644
+--- a/recipes-multimedia/gstreamer/gstreamer1.0-plugins-base_1.18.0.imx.bb
++++ b/recipes-multimedia/gstreamer/gstreamer1.0-plugins-base_1.18.0.imx.bb
+@@ -6,7 +6,7 @@ BUGTRACKER = "https://gitlab.freedesktop.org/gstreamer/gst-plugins-base/-/issues
+ LICENSE = "GPLv2+ & LGPLv2+"
+ LIC_FILES_CHKSUM = "file://COPYING;md5=6762ed442b3822387a51c92d928ead0d"
+ 
+-GST1.0-PLUGINS-BASE_SRC ?= "gitsm://source.codeaurora.org/external/imx/gst-plugins-base.git;protocol=https"
++GST1.0-PLUGINS-BASE_SRC ?= "gitsm://github.com/nxp-imx/gst-plugins-base.git;protocol=https"
+ SRCBRANCH = "MM_04.06.01_2105_L5.10.y"
+ SRC_URI = "${GST1.0-PLUGINS-BASE_SRC};branch=${SRCBRANCH} \
+            file://0003-viv-fb-Make-sure-config.h-is-included.patch \
+diff --git a/recipes-multimedia/gstreamer/gstreamer1.0-plugins-good_1.18.0.imx.bb b/recipes-multimedia/gstreamer/gstreamer1.0-plugins-good_1.18.0.imx.bb
+index 29e25f7d..4150d2b7 100644
+--- a/recipes-multimedia/gstreamer/gstreamer1.0-plugins-good_1.18.0.imx.bb
++++ b/recipes-multimedia/gstreamer/gstreamer1.0-plugins-good_1.18.0.imx.bb
+@@ -1,6 +1,6 @@
+ require recipes-multimedia/gstreamer/gstreamer1.0-plugins-common.inc
+ 
+-GST1.0-PLUGINS-GOOD_SRC ?= "gitsm://source.codeaurora.org/external/imx/gst-plugins-good.git;protocol=https"
++GST1.0-PLUGINS-GOOD_SRC ?= "gitsm://github.com/nxp-imx/gst-plugins-good.git;protocol=https"
+ SRCBRANCH = "MM_04.06.01_2105_L5.10.y"
+ 
+ SRC_URI = " \
+diff --git a/recipes-multimedia/gstreamer/gstreamer1.0_1.18.0.imx.bb b/recipes-multimedia/gstreamer/gstreamer1.0_1.18.0.imx.bb
+index cbbcf9b4..03b60573 100644
+--- a/recipes-multimedia/gstreamer/gstreamer1.0_1.18.0.imx.bb
++++ b/recipes-multimedia/gstreamer/gstreamer1.0_1.18.0.imx.bb
+@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=6762ed442b3822387a51c92d928ead0d \
+ S = "${WORKDIR}/git"
+ 
+ # Use i.MX fork of GST for customizations
+-GST1.0_SRC ?= "gitsm://source.codeaurora.org/external/imx/gstreamer.git;protocol=https"
++GST1.0_SRC ?= "gitsm://github.com/nxp-imx/gstreamer.git;protocol=http"
+ SRCBRANCH = "MM_04.06.01_2105_L5.10.y"
+ SRC_URI = "${GST1.0_SRC};branch=${SRCBRANCH} \
+            file://run-ptest \
+diff --git a/recipes-multimedia/gstreamer/imx-gst1.0-plugin_4.6.1.bb b/recipes-multimedia/gstreamer/imx-gst1.0-plugin_4.6.1.bb
+index ea059cd8..ceb01ede 100644
+--- a/recipes-multimedia/gstreamer/imx-gst1.0-plugin_4.6.1.bb
++++ b/recipes-multimedia/gstreamer/imx-gst1.0-plugin_4.6.1.bb
+@@ -23,7 +23,7 @@ LIC_FILES_CHKSUM = "file://COPYING-LGPL-2;md5=5f30f0716dfdd0d91eb439ebec522ec2 \
+ SRCBRANCH = "MM_04.06.01_2105_L5.10.y"
+ 
+ 
+-SRC_URI = "git://source.codeaurora.org/external/imx/imx-gst1.0-plugin.git;protocol=https;branch=${SRCBRANCH}"
++SRC_URI = "git://github.com/nxp-imx/imx-gst1.0-plugin.git;protocol=https;branch=${SRCBRANCH}"
+ SRCREV = "057e6bfbc208ce31e8ed0af0264dd1e86de05808"
+ 
+ S = "${WORKDIR}/git"
+diff --git a/recipes-security/optee-imx/optee-client_3.10.0.imx.bb b/recipes-security/optee-imx/optee-client_3.10.0.imx.bb
+index 58b6b8a4..ae8a70fb 100644
+--- a/recipes-security/optee-imx/optee-client_3.10.0.imx.bb
++++ b/recipes-security/optee-imx/optee-client_3.10.0.imx.bb
+@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=69663ab153298557a59c67a60a743e5b"
+ 
+ SRCBRANCH = "imx_5.4.70_2.3.0"
+ SRC_URI = " \
+-    git://source.codeaurora.org/external/imx/imx-optee-client.git;protocol=https;branch=${SRCBRANCH} \
++    git://github.com/nxp-imx/imx-optee-client.git;protocol=https;branch=${SRCBRANCH} \
+     file://tee-supplicant.service \
+ "
+ 
+diff --git a/recipes-security/optee-imx/optee-os_3.10.0.imx.bb b/recipes-security/optee-imx/optee-os_3.10.0.imx.bb
+index 712b1aa6..354a9f01 100644
+--- a/recipes-security/optee-imx/optee-os_3.10.0.imx.bb
++++ b/recipes-security/optee-imx/optee-os_3.10.0.imx.bb
+@@ -11,7 +11,7 @@ DEPENDS = "python3-pycryptodomex-native python3-pyelftools-native u-boot-mkimage
+ SRCBRANCH = "imx_5.4.70_2.3.0"
+ 
+ SRC_URI = "\
+-	git://source.codeaurora.org/external/imx/imx-optee-os.git;protocol=https;branch=${SRCBRANCH} \
++	git://github.com/nxp-imx/imx-optee-os.git;protocol=https;branch=${SRCBRANCH} \
+ "
+ 
+ SRCREV = "a991c90475bb1c715651e5fe27f7f32cbe61aef9"
+diff --git a/recipes-security/optee-imx/optee-test_3.10.0.imx.bb b/recipes-security/optee-imx/optee-test_3.10.0.imx.bb
+index a8a1b245..2cf94b04 100644
+--- a/recipes-security/optee-imx/optee-test_3.10.0.imx.bb
++++ b/recipes-security/optee-imx/optee-test_3.10.0.imx.bb
+@@ -10,7 +10,7 @@ DEPENDS = "python3-pycrypto-native python3-pycryptodomex-native optee-os optee-c
+ 
+ SRCBRANCH = "imx_5.4.70_2.3.0"
+ 
+-SRC_URI = "git://source.codeaurora.org/external/imx/imx-optee-test.git;protocol=https;branch=${SRCBRANCH}"
++SRC_URI = "git://github.com/nxp-imx/imx-optee-test.git;protocol=https;branch=${SRCBRANCH}"
+ 
+ S = "${WORKDIR}/git"
+ B = "${WORKDIR}/build"
+diff --git a/recipes-support/opencv/opencv_4.5.2.imx.bb b/recipes-support/opencv/opencv_4.5.2.imx.bb
+index 2d71acfc..0235c658 100644
+--- a/recipes-support/opencv/opencv_4.5.2.imx.bb
++++ b/recipes-support/opencv/opencv_4.5.2.imx.bb
+@@ -243,7 +243,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=3b83ef96387f14655fc854ddc3c6bd57"
+ 
+ # Replace the opencv URL with the fork
+ SRCREV_opencv = "5423d53ae0d116ee5bbe52f8b5503f0cd8586998"
+-OPENCV_SRC ?= "git://source.codeaurora.org/external/imx/opencv-imx.git;protocol=https"
++OPENCV_SRC ?= "git://github.com/nxp-imx/opencv-imx.git;protocol=https"
+ SRCBRANCH = "4.5.2_imx"
+ SRC_URI_remove = "git://github.com/opencv/opencv.git;name=opencv"
+ SRC_URI =+ "${OPENCV_SRC};branch=${SRCBRANCH};name=opencv"

@@ -1,0 +1,101 @@
+diff --git a/meta-bsp/recipes-bsp/u-boot/u-boot-imx-tools_2021.04.bb b/meta-bsp/recipes-bsp/u-boot/u-boot-imx-tools_2021.04.bb
+index bc7f70db26..d73a57c954 100644
+--- a/meta-bsp/recipes-bsp/u-boot/u-boot-imx-tools_2021.04.bb
++++ b/meta-bsp/recipes-bsp/u-boot/u-boot-imx-tools_2021.04.bb
+@@ -5,6 +5,7 @@ PROVIDES_append_class-target = " ${MLPREFIX}u-boot-tools"
+ PROVIDES_append_class-native = " u-boot-tools-native"
+ PROVIDES_append_class-nativesdk = " nativesdk-u-boot-tools"
+ 
++
+ PACKAGE_ARCH = "${MACHINE_ARCH}"
+ 
+ # Set recipe as incompatible by default
+diff --git a/meta-bsp/recipes-bsp/u-boot/u-boot-imx_2021.04.bb b/meta-bsp/recipes-bsp/u-boot/u-boot-imx_2021.04.bb
+index ebe101467b..429fadcfd8 100644
+--- a/meta-bsp/recipes-bsp/u-boot/u-boot-imx_2021.04.bb
++++ b/meta-bsp/recipes-bsp/u-boot/u-boot-imx_2021.04.bb
+@@ -10,6 +10,7 @@ PROVIDES += "u-boot"
+ UBOOT_SRC ?= "git://github.com/nxp-imx/uboot-imx.git;protocol=https"
+ SRCBRANCH = "lf_v2021.04"
+ SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH}"
++SRC_URI += "file://imx-boot_4G.bin"
+ SRCREV = "263b27e076a0f6e5dcc80227a235f0af73718342"
+ 
+ LOCALVERSION = "-${SRCBRANCH}"
+@@ -39,6 +40,7 @@ UBOOT_TAGGED_BINARY ?= "u-boot-tagged.${UBOOT_SUFFIX}"
+ 
+ deploy_tag() {
+     # Append a tag to the bootloader image used in the SD card image
++    cp ${S}/imx-boot_4G.bin ${UBOOT_BINARY}
+     cp ${UBOOT_BINARY} ${UBOOT_TAGGED_BINARY}
+     ln -sf ${UBOOT_TAGGED_BINARY} ${UBOOT_BINARY}
+     stat -L -cUUUBURNXXOEUZX7+A-XY5601QQWWZ%sEND ${UBOOT_BINARY} >> ${UBOOT_BINARY}
+diff --git a/meta-bsp/recipes-kernel/linux/linux-imx_5.10.bb b/meta-bsp/recipes-kernel/linux/linux-imx_5.10.bb
+index 2b8da5b796..8d919fac9d 100644
+--- a/meta-bsp/recipes-kernel/linux/linux-imx_5.10.bb
++++ b/meta-bsp/recipes-kernel/linux/linux-imx_5.10.bb
+@@ -13,14 +13,17 @@ require recipes-kernel/linux/linux-imx.inc
+ 
+ LICENSE = "GPLv2"
+ LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
+-
++FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
+ DEPENDS += "lzop-native bc-native"
+ 
+ SRCBRANCH = "lf-5.10.y"
+ LOCALVERSION = "-lts-5.10.y"
+ KERNEL_SRC ?= "git://github.com/nxp-imx/linux-imx.git;protocol=https"
+ SRC_URI = "${KERNEL_SRC};branch=${SRCBRANCH}"
+-
++SRC_URI += "file://OK8MP-C.dts"
++SRC_URI += "file://imx8mp_corrected.dtsi"
++SRC_URI += "file://Makefile"
++SRC_URI += "file://OK8MP-C_defconfig"
+ SRCREV = "a68e31b63f864ff71cd4adb40fbc9e1edc75c250"
+ 
+ # PV is defined in the base in linux-imx.inc file and uses the LINUX_VERSION definition
+@@ -43,7 +46,8 @@ DO_CONFIG_V7_COPY_mx8 = "no"
+ 
+ # Add setting for LF Mainline build
+ IMX_KERNEL_CONFIG_AARCH32 = "imx_v7_defconfig"
+-IMX_KERNEL_CONFIG_AARCH64 = "imx_v8_defconfig"
++# IMX_KERNEL_CONFIG_AARCH64 = "imx_v8_defconfig"
++IMX_KERNEL_CONFIG_AARCH64 = "OK8MP-C_defconfig"
+ KBUILD_DEFCONFIG ?= ""
+ KBUILD_DEFCONFIG_mx6= "${IMX_KERNEL_CONFIG_AARCH32}"
+ KBUILD_DEFCONFIG_mx7= "${IMX_KERNEL_CONFIG_AARCH32}"
+@@ -53,9 +57,15 @@ KBUILD_DEFCONFIG_mx8= "${IMX_KERNEL_CONFIG_AARCH64}"
+ # Use a verbatim copy of the defconfig from the linux-imx repo.
+ # IMPORTANT: This task effectively disables kernel config fragments
+ # since the config fragments applied in do_kernel_configme are replaced.
++do_kernel_metadata_prepend () {
++    cp ${WORKDIR}/${IMX_KERNEL_CONFIG_AARCH64} ${S}/arch/arm64/configs/
++}
+ addtask copy_defconfig after do_kernel_configme before do_kernel_localversion
+ do_copy_defconfig () {
+     install -d ${B}
++    cp ${WORKDIR}/OK8MP-C.dts ${S}/arch/arm64/boot/dts/freescale/imx8mq-evk-dp.dtb
++    cp ${WORKDIR}/imx8mp_corrected.dtsi ${S}/arch/arm64/boot/dts/freescale/imx9mp.dtsi
++    #sed 's|imx8mq-evk-dp.dtb|OK8MP-C.dtb|g' ${S}/arch/arm64/boot/dts/freescale/Makefile
+     if [ ${DO_CONFIG_V7_COPY} = "yes" ]; then
+         # copy latest IMX_KERNEL_CONFIG_AARCH32 to use for mx6, mx6ul and mx7
+         mkdir -p ${B}
+diff --git a/meta-ml/recipes-libraries/deepview-rt/deepview-rt_2.4.32-aarch64.bb b/meta-ml/recipes-libraries/deepview-rt/deepview-rt_2.4.32-aarch64.bb
+index aa1e83ce92..5d50fbd7cf 100644
+--- a/meta-ml/recipes-libraries/deepview-rt/deepview-rt_2.4.32-aarch64.bb
++++ b/meta-ml/recipes-libraries/deepview-rt/deepview-rt_2.4.32-aarch64.bb
+@@ -64,3 +64,4 @@ INSANE_SKIP_${PN} += "dev-so dev-deps ldflags"
+ 
+ COMPATIBLE_MACHINE = "(mx8)"
+ BBCLASSEXTEND = "nativesdk"
++RPROVIDES_${PN} = "${PN}"
+diff --git a/meta-ml/recipes-libraries/onnxruntime/onnxruntime_1.8.2.bb b/meta-ml/recipes-libraries/onnxruntime/onnxruntime_1.8.2.bb
+index 67f8047bd7..c07b1fbc13 100644
+--- a/meta-ml/recipes-libraries/onnxruntime/onnxruntime_1.8.2.bb
++++ b/meta-ml/recipes-libraries/onnxruntime/onnxruntime_1.8.2.bb
+@@ -158,4 +158,4 @@ INSANE_SKIP_${PN}-tests += "libdir"
+ INSANE_SKIP_${PN}-dbg += "libdir"
+ 
+ RDEPENDS_${PN}-tests += "arm-compute-library"
+-
++RPROVIDES_${PN} = "${PN}"

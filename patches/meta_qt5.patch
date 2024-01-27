@@ -1,0 +1,64 @@
+diff --git a/conf/layer.conf b/conf/layer.conf
+index 9c8844db..27764630 100644
+--- a/conf/layer.conf
++++ b/conf/layer.conf
+@@ -34,8 +34,12 @@ LAYERSERIES_COMPAT_qt5-layer = "dunfell gatesgarth hardknott"
+ LICENSE_PATH += "${LAYERDIR}/licenses"
+ 
+ IMAGE_FEATURES[validitems] += "qtcreator-debug"
+-
++QT_MODULE_BRANCH_PARAM_append = ";nobranch=1"
+ QT_GIT_PROJECT ?= "qt"
+ QT_GIT ?= "git://code.qt.io/${QT_GIT_PROJECT}"
+ QT_GIT_PROTOCOL ?= "git"
+ QT_EDITION ?= "opensource"
++#QT_GIT_PROJECT ?= "qtmirror"
++#QT_GIT ?= "git://gitlab.com/${QT_GIT_PROJECT}"
++#QT_GIT ?= "git://github.com/${QT_GIT_PROJECT}"
++#github.com/qt
+diff --git a/recipes-qt/packagegroups/packagegroup-qt5-toolchain-target.bb b/recipes-qt/packagegroups/packagegroup-qt5-toolchain-target.bb
+index 8c8bed30..047b2cbd 100755
+--- a/recipes-qt/packagegroups/packagegroup-qt5-toolchain-target.bb
++++ b/recipes-qt/packagegroups/packagegroup-qt5-toolchain-target.bb
+@@ -23,6 +23,7 @@ USE_X11 = " \
+ "
+ 
+ RDEPENDS_${PN} += " \
++    packagegroup-imx-mll \
+     packagegroup-core-standalone-sdk-target \
+     libsqlite3-dev \
+     ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'qt3d-dev', '', d)} \
+@@ -100,6 +101,7 @@ RDEPENDS_${PN} += " \
+     qtquickcontrols2-dev \
+     qtquickcontrols2-mkspecs \
+ "
++
+ RDEPENDS_${PN}_remove_toolchain-clang_riscv32 = "qttools-dev qttools-mkspecs qttools-staticdev qttools-tools"
+ RDEPENDS_${PN}_remove_toolchain-clang_riscv64 = "qttools-dev qttools-mkspecs qttools-staticdev qttools-tools"
+ 
+@@ -110,3 +112,5 @@ RRECOMMENDS_${PN} += " \
+ 
+ RRECOMMENDS_${PN}_remove_toolchain-clang_riscv32 = "qttools-plugins"
+ RRECOMMENDS_${PN}_remove_toolchain-clang_riscv64 = "qttools-plugins"
++#RDEPENDS_${PN}_remove = "onnxruntime"
++#RDEPENDS_${PN}_remove = "deepview-rt-examples"
+\ No newline at end of file
+diff --git a/recipes-qt/qt5/qt5-git.inc b/recipes-qt/qt5/qt5-git.inc
+index f1d724dd..509949e8 100644
+--- a/recipes-qt/qt5/qt5-git.inc
++++ b/recipes-qt/qt5/qt5-git.inc
+@@ -2,7 +2,7 @@
+ # Copyright (C) 2013-2020 Martin Jansa <martin.jansa@gmail.com>
+ 
+ QT_MODULE ?= "${BPN}"
+-QT_MODULE_BRANCH ?= "5.15.2"
++QT_MODULE_BRANCH ?= "5.15"
+ QT_MODULE_BRANCH_PARAM ?= "branch=${QT_MODULE_BRANCH}"
+ 
+ # each module needs to define valid SRCREV
+@@ -14,4 +14,4 @@ CVE_PRODUCT = "qt"
+ 
+ S = "${WORKDIR}/git"
+ 
+-PV = "5.15.2+git${SRCPV}"
++PV = "5.15+git${SRCPV}"

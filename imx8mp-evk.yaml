@@ -43,10 +43,13 @@ repos:
   meta-freescale:
     url: "https://github.com/Freescale/meta-freescale.git"
     refspec: 469d6c958c76ea235b3d3c1527e797ce3a7392e3
-#    patches:
+    patches:
 #      01-to-remove-imx8mp-evk-conf:
 #        path: patches/0001-remove-imx8mn-imx8mp-evk-conf.patch
 #        repo: adu
+      01-change_path:
+        path: patches/meta-freescale.patch
+        repo: adu
 
   meta-freescale-3rdparty:
     url: "https://github.com/Freescale/meta-freescale-3rdparty.git"
@@ -63,6 +66,9 @@ repos:
       meta-bsp:
       meta-ml:
       meta-sdk:
+      01-change_path:
+        path: patches/meta-imx.patch
+        repo: adu
 
   meta-python2:
     url: "https://git.openembedded.org/meta-python2"
@@ -80,6 +86,9 @@ repos:
   meta-qt5:
     url: "https://code.qt.io/yocto/meta-qt5.git"
     refspec: 43f8f539d40070a70fe89136db89bf5bb1dfe7ed
+      01-change_path:
+        path: patches/meta-qt5.patch
+        repo: adu
 
 #  meta-nxp-demo-experience:
 #    url: https://github.com/nxp-imx-support/meta-nxp-demo-experience.git
